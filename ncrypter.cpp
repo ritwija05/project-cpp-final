@@ -3,19 +3,16 @@
 #include <cstring>
 #include <cstdio>
 using namespace std;
-//-----------------function declaration--------------------------
+
 void encrypt();
 void decrypt();
 void banner();
 
-
-//----------------global variable declaration--------------------
 char str[30];//string for input and output
 int i,num=0;
 int ConvLimit=0;
 int key;
 
-//----------------main program------------------
 int main() {
   int opt;
   cout<<"Choose an option\n "
@@ -49,7 +46,7 @@ void encrypt(){  //encrypt function
                     break;
 		}
     ConvLimit = strlen(str);
-    //cout<<;  //--DEBUG PURPOSE
+    
     str[ConvLimit]='\0';
     str[0]='\0';
     str[ConvLimit-1]='\0';
@@ -58,9 +55,9 @@ void encrypt(){  //encrypt function
       //-----------------
       if (str[i]=='\0')//used for removing occational segmentation faults
           break;
-     //-----------------
+    
      key=i%4;
-     //-----------------
+     
       num=str[i]; //letter to ASCII
       switch (key) {
           case 0 :num++;
